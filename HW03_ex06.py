@@ -9,9 +9,13 @@
 # if x > y, 0 if x == y, and -1 if x < y."
 # When you submit only include your final function: compare
 
-
-
-
+def compare(x,y):
+    if x>y:
+        return 1
+    if x==y:
+        return 0
+    if x<y:
+        return -1
 
 ###############################################################################
 # Exercise 6.2
@@ -22,19 +26,24 @@
 # Do develop incrementally. Do not share in your final push your incremental
 # work.
 
-
-
-
+def hypotenuse(a,b):
+    a2=a**2
+    b2=b**2
+    csquared=a2+b2
+    result=math.sqrt(csquared)
+    return result
 
 ###############################################################################
 # Exercise 6.4
-# See 6.4: "write a function is_between(x, y, z) that returns True if x ≤ y ≤ z
+# See 6.4: "write a function is_between(x, y, z) that returns True if x <= y <= z
 # or False otherwise"
 # When you submit only include your final function: is_between
 
-
-
-
+def is_between(x,y,z):
+    if x<=y<=z:
+        return True
+    else:
+        return False
 
 ###############################################################################
 # Exercise 3.2
@@ -44,9 +53,22 @@
 # string."
 # When you submit only include your final function: is_palindrome
 
-
-
-
+def is_palindrome(s):
+    x=str.lower(s)
+    if len(s)==1:
+        return False
+    if len(s)==2:
+        if s[0]==s[-1]:
+            return True
+    if len(s)>2:
+        if s[0]==s[-1]:
+            secondlast_element=len(s)-1
+            middle=s[1:secondlast_element]
+            if len(middle)==1:
+                return True
+            return is_palindrome(middle)
+        else:
+            return False
 
 ###############################################################################
 # Exercise 4
@@ -58,8 +80,14 @@
 # (whole numbers not including zero)
 # When you submit only include your final function: is_power
 
-
-
+def is_power(a,b):
+    if int(a%b)==0:
+        if int(a/b)==1:
+            return True
+        else:
+            return is_power(int(a/b),b)
+    else:
+        return False
 
 
 ###############################################################################
